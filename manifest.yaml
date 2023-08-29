@@ -1,0 +1,11 @@
+packages:
+  github-api:
+    actions:
+      list-project:
+        function: list-project.py
+        web: true
+        inputs:
+          githubtoken: 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
+      all-args:
+        function: all-args.py
+        web: true
