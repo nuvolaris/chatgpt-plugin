@@ -1,0 +1,56 @@
+openapi: 3.0.1
+info:
+  title: GitHub API Plugin
+  description: A plugin that retrieves a list of projects from GitHub for an organization using ChatGPT.
+  version: 'v1'
+servers:
+  - url: https://nuvgpt.n9s.cc/api/v1/web/nuvolaris/github-api
+paths:
+  /list-project:
+    post:
+      operationId: listProjects
+      summary: Retrieve a list of projects from GitHub for an organization.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/listProjectsRequest'
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/listProjectsResponse'
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/errorResponse'
+
+components:
+  schemas:
+    listProjectsRequest:
+      type: object
+      properties:
+        organization:
+          type: string
+          description: The name of the GitHub organization.
+          example: "apache"
+    listProjectsResponse:
+      type: object
+      properties:
+        repos:
+          type: object
+          description: A dictionary containing project names as keys and their descriptions as values.
+          example:
+            echarts: "Apache ECharts is a powerful, interactive charting library."
+            spark: "Apache Spark - A unified analytics engine for large-scale data processing."
+    errorResponse:
+      type: object
+      properties:
+        error:
+          type: string
+          description: Description of the error.
