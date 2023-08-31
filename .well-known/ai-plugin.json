@@ -1,0 +1,18 @@
+{
+    "schema_version": "v1",
+    "name_for_human": "GitHub API Plugin with Nuvolaris",
+    "name_for_model": "github-api-nuvolaris",
+    "description_for_human": "Find an organization repos on GitHub (made with Nuvolaris)",
+    "description_for_model": "Plugin for finding the list of repositories made by an organization on GitHub",
+    "auth": {
+      "type": "none"
+    },
+    "api": {
+      "type": "openapi",
+      "url": "https://gptuser.nuvgpt.n9s.cc/openapi.yaml"
+    },
+    "logo_url": "https://gptuser.nuvgpt.n9s.cc/logo.jpg",
+    "contact_email": "info@nuvolaris.io",
+    "legal_info_url": "https://gptuser.nuvgpt.n9s.cc/legal.html"
+}
+  
