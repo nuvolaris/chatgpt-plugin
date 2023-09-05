@@ -9,3 +9,10 @@ packages:
       all-args:
         function: all-args.py
         web: true
+  figma-api:
+    actions:
+      figma-api:
+        function: figma-api.py
+        web: true
+        inputs:
+          apitoken: ${FIGMA_TOKEN}
