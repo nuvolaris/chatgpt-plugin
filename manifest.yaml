@@ -16,3 +16,8 @@ packages:
         web: true
         inputs:
           apitoken: ${FIGMA_TOKEN}
+  guru:
+    actions:
+      meditation:
+        function: meditation.py
+        web: true

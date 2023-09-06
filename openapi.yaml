@@ -52,6 +52,30 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/errorResponse'
+  
+  guru/meditation:
+    get:
+      operationId: guruApi
+      summary: Ask the Guru a meditation about any subject
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/guruApiRequest'
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/guruApiResponse'
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/errorResponse'
 
 components:
   schemas:
@@ -96,6 +120,22 @@ components:
           type: object
           description: The nodes within the Figma file.
           example: {}
+
+    guruApiRequest:
+      type: object
+      properties:
+        subject:
+          type: string
+          description: Subject of a meditation of the guru.
+          example: "life"
+    figmaApiResponse:
+      type: object
+      description: The answer of the guru.
+      properties:
+        answer:
+          type: string
+          description: The answer of a guru meditation on a subject.
+
     errorResponse:
       type: object
       properties:
