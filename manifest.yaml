@@ -16,6 +16,7 @@ packages:
         web: true
         inputs:
           apitoken: ${FIGMA_TOKEN}
+          openaitoken: ${OPENAI_TOKEN}
   guru:
     actions:
       meditation:
