@@ -1,0 +1,17 @@
+{
+    "schema_version": "v1",
+    "name_for_human": "Nuvolaris Plugin",
+    "name_for_model": "nuvolaris_plugin",
+    "description_for_human": "Find an organization repos on GitHub",
+    "description_for_model": "Retrieving repositories made by an organization on GitHub",
+    "auth": {
+      "type": "none"
+    },
+    "api": {
+      "type": "openapi",
+      "url": "https://chatgpt.nuvolaris.app/openapi.yaml"
+    },
+    "logo_url": "https://chatgpt.nuvolaris.app/logo.jpg",
+    "contact_email": "info@nuvolaris.io",
+    "legal_info_url": "https://chatgpt.nuvolaris.app/legal.html"
+  }

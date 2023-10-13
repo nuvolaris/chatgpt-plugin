@@ -2,22 +2,12 @@ packages:
   github-api:
     actions:
       list-project:
-        function: list-project.py
+        function: github-api/list-project.py
         web: true
         inputs:
           githubtoken: ${GITHUB_TOKEN}
-      all-args:
-        function: all-args.py
-        web: true
-  figma-api:
-    actions:
-      figma-api:
-        function: figma-api.py
-        web: true
-        inputs:
-          apitoken: ${FIGMA_TOKEN}
   guru:
     actions:
       meditation:
-        function: meditation.py
+        function: guru/meditation.py
         web: true

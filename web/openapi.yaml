@@ -4,7 +4,7 @@ info:
   description: A plugin that retrieves a list of projects from GitHub for an organization and retrieves a Figma file as a JSON.
   version: 'v1'
 servers:
-  - url: https://gptuser.nuvgpt.n9s.cc/api/my
+  - url: https://chatgpt.nuvolaris.app/api/my
 paths:
   github-api/list-project:
     post:
@@ -29,32 +29,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/errorResponse'
-  figma-api/figma-api:
-    post:
-      operationId: figmaApi
-      summary: Retrieve a Figma file as a JSON using its ID.
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/figmaApiRequest'
-      responses:
-        "200":
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/figmaApiResponse'
-        "400":
-          description: Bad Request
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/errorResponse'
-  
   guru/meditation:
-    get:
+    post:
       operationId: guruApi
       summary: Ask the Guru a meditation about any subject
       requestBody:
@@ -95,31 +71,6 @@ components:
           example:
             echarts: "Apache ECharts is a powerful, interactive charting library."
             spark: "Apache Spark - A unified analytics engine for large-scale data processing."
-    figmaApiRequest:
-      type: object
-      properties:
-        fileid:
-          type: string
-          description: The ID of the Figma file.
-          example: "ByHquY48ncR1nQdhhPU7Bj"
-        apitoken:
-          type: string
-          description: The Figma API token.
-          example: "figd_xUC6Aqv5r0berObctWIizA4VhWG5Nmj2EOHFwTum"
-    figmaApiResponse:
-      type: object
-      description: The Figma file retrieved from the API.
-      properties:
-        fileId:
-          type: string
-          description: The ID of the retrieved Figma file.
-        name:
-          type: string
-          description: The name of the retrieved Figma file.
-        nodes:
-          type: object
-          description: The nodes within the Figma file.
-          example: {}
 
     guruApiRequest:
       type: object

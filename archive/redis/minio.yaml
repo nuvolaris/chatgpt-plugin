@@ -1,0 +1,34 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-issuer
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"networking.k8s.io/v1","kind":"Ingress","metadata":{"annotations":{"cert-manager.io/cluster-issuer":"letsencrypt-issuer","kubernetes.io/ingress.class":"traefik"},"name":"minio","namespace":"nuvolaris"},"spec":{"rules":[{"host":"minio.nuvgpt.n9s.cc","http":{"paths":[{"backend":{"service":{"name":"minio","port":{"number":9090}}},"path":"/","pathType":"Prefix"}]}}],"tls":[{"hosts":["minio.nuvgpt.n9s.cc"],"secretName":"minio-letsencrypt-secret"}]}}
+    kubernetes.io/ingress.class: traefik
+  creationTimestamp: "2023-08-28T13:59:36Z"
+  generation: 1
+  name: minio
+  namespace: nuvolaris
+  resourceVersion: "31044"
+  uid: cd1d1b22-0829-424a-b4b5-f79f53728098
+spec:
+  rules:
+  - host: minio.nuvgpt.n9s.cc
+    http:
+      paths:
+      - backend:
+          service:
+            name: minio
+            port:
+              number: 9090
+        path: /
+        pathType: Prefix
+  tls:
+  - hosts:
+    - minio.nuvgpt.n9s.cc
+    secretName: minio-letsencrypt-secret
+status:
+  loadBalancer:
+    ingress:
+    - ip: 172.16.0.4

@@ -1,0 +1,8 @@
+packages:
+  guru:
+    actions:
+      redis:
+        function: redis.py
+        inputs:
+          redis_prefix: ${REDIS_PREFIX}
+          redis_url": ${REDIS_URL}
