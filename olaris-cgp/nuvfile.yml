@@ -1,0 +1,26 @@
+version: '3'
+
+tasks:
+
+  deploy:
+    desc: deploy 
+    silent: true
+    deps:
+    - fe
+    - be
+
+  be:
+    desc: deploy backend 
+    silent: true
+    cmds:
+    - >
+      cd $NUV_PWD/packages ;
+      nuv -wsk project deploy
+
+  fe:
+    desc: deploy frontend 
+    silent: true
+    cmds:
+    - nuv devel minio put $NUV_PWD/web/.well-known/ai-plugin.json chatgpt-web .well-known/ai-plugin.json 
+    - nuv devel minio put $NUV_PWD/web/openapi.yaml chatgpt-web openapi.yaml
+    - nuv devel minio put $NUV_PWD/web/legal.html chatgpt-web legal.html

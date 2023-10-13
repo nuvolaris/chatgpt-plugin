@@ -1,5 +1,7 @@
 import requests
 
+cache = {}
+
 def check_errors(response):
     if response.status_code == 200:
         return None
@@ -22,9 +24,14 @@ def list_projects(url, organization, token):
     return response
 
 def main(args):
+    global cache
+
     organization = args.get('organization', 'apache')
-    token = args.get('githubtoken')
     
+    if organization in cache:
+        return {"body": cache[organization]}
+
+    token = args.get('githubtoken')   
     response = list_projects("", organization, token)
     error = check_errors(response)
 
@@ -52,4 +59,5 @@ def main(args):
         repo_description = repo["description"]
         projects[repo_name] = repo_description
 
+    cache[organization] = projects
     return {"body": projects}

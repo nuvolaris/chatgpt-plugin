@@ -9,9 +9,10 @@
     },
     "api": {
       "type": "openapi",
-      "url": "https://chatgpt.nuvolaris.app/openapi.yaml"
+      "url": "https://chatgpt.nuvolaris.app/openapi.yaml",
+      "has_user_authentication": false
     },
-    "logo_url": "https://chatgpt.nuvolaris.app/logo.jpg",
+    "logo_url": "https://www.nuvolaris.io/favicon.png",
     "contact_email": "info@nuvolaris.io",
     "legal_info_url": "https://chatgpt.nuvolaris.app/legal.html"
   }

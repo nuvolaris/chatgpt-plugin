@@ -1,7 +1,7 @@
 openapi: 3.0.1
 info:
   title: Nuvolaris API Plugin
-  description: A plugin that retrieves a list of projects from GitHub for an organization and retrieves a Figma file as a JSON.
+  description: A plugin that retrieves a list of projects from GitHub for an organization.
   version: 'v1'
 servers:
   - url: https://chatgpt.nuvolaris.app/api/my
@@ -79,7 +79,7 @@ components:
           type: string
           description: Subject of a meditation of the guru.
           example: "life"
-    figmaApiResponse:
+    guruApiResponse:
       type: object
       description: The answer of the guru.
       properties:
