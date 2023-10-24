@@ -12,3 +12,25 @@ We are developing a function to prcesses Figma Files generating an user interfac
 Discuss your ideas and contributions in our forum.
 
 https://nuvolaris.discourse.group/t/a-new-open-source-project-open-to-everyone-chatgpt-plugin-in-nuvolaris/79/1
+
+
+## How to deploy the demo
+
+Follow these steps to deploy the demo, in this case using the `nuvolaris.app` domain
+
+```
+# Setup 1st a nuvolaris chatgpt user
+nuv adduser chatgpt <password> --all
+
+# Login as user chatgpt (enter the password when requested)
+nuv -login https://nuvolaris.app
+
+# create a .env file setting a GITHUB_TOKEN env variable
+
+# Deploy the project with
+task deploy
+
+# or alternatively with
+export GITHUB_TOKEN=<token>;export CGPT_REDIS_URL=<redis_url>; export CGPT_REDIS_PREFIX=chatgpt: ; nuv gcp deploy
+
+```

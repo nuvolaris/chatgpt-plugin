@@ -6,6 +6,8 @@ packages:
         web: true
         inputs:
           githubtoken: ${GITHUB_TOKEN}
+          redis_url: ${CGPT_REDIS_URL}
+          redis_prefix: ${CGPT_REDIS_PREFIX}
   guru:
     actions:
       meditation:

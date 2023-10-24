@@ -1,6 +1,6 @@
 import requests
-
-cache = {}
+import redis
+import json
 
 def check_errors(response):
     if response.status_code == 200:
@@ -24,12 +24,14 @@ def list_projects(url, organization, token):
     return response
 
 def main(args):
-    global cache
+    r = redis.from_url(args.get("redis_url"))
+    p = args.get("redis_prefix")
 
-    organization = args.get('organization', 'apache')
-    
-    if organization in cache:
-        return {"body": cache[organization]}
+    organization = args.get('organization','apache')
+
+    if r.exists(f"{p}{organization}"):
+        data = r.get(f"{p}{organization}").decode()
+        return {"body": json.loads(data)}
 
     token = args.get('githubtoken')   
     response = list_projects("", organization, token)
@@ -58,6 +60,8 @@ def main(args):
         repo_name = repo["name"]
         repo_description = repo["description"]
         projects[repo_name] = repo_description
-
-    cache[organization] = projects
+    
+    # Cache into redis with 1 hour expiration time
+    r.set(f"{p}{organization}", json.dumps(projects))
+    r.expire(f"{p}{organization}",3600) 
     return {"body": projects}
