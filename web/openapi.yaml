@@ -6,7 +6,7 @@ info:
 servers:
   - url: https://chatgpt.nuvolaris.app/api/my
 paths:
-  github-api/list-project:
+  /github-api/list-project:
     post:
       operationId: listProjects
       summary: Retrieve a list of projects from GitHub for an organization.
@@ -29,7 +29,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/errorResponse'
-  guru/meditation:
+  /guru/meditation:
     post:
       operationId: guruApi
       summary: Ask the Guru a meditation about any subject
