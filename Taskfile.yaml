@@ -27,10 +27,16 @@ dotenv:
   - .env    
 
 tasks:
-  deploy:
-    cmds:
-      - echo $GITHUB_TOKEN
-      - echo $CGPT_REDIS_URL
-      - echo $CGPT_REDIS_PREFIX
-      - nuv cgp deploy
-    silent: true
+
+  default: task --list-all
+  
+  info:
+    - echo $GITHUB_TOKEN
+    - echo $CGPT_REDIS_URL
+    - echo $CGPT_REDIS_PREFIX
+
+  fe: nuv cgp fe
+
+  be: nuv cgp be
+
+  deploy: nuv cgp deploy

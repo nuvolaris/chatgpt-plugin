@@ -21,6 +21,6 @@ tasks:
     desc: deploy frontend 
     silent: true
     cmds:
-    - nuv devel minio put $NUV_PWD/web/.well-known/ai-plugin.json chatgpt-web .well-known/ai-plugin.json 
-    - nuv devel minio put $NUV_PWD/web/openapi.yaml chatgpt-web openapi.yaml
-    - nuv devel minio put $NUV_PWD/web/legal.html chatgpt-web legal.html
+    - nuv devel minio put $NUV_PWD/web/.well-known/ai-plugin.json michele-web .well-known/ai-plugin.json 
+    - nuv devel minio put $NUV_PWD/web/openapi.yaml michele-web openapi.yaml
+    - nuv devel minio put $NUV_PWD/web/privacy.html michele-web privacy.html

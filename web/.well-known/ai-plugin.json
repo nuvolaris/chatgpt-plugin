@@ -1,18 +1,18 @@
 {
-    "schema_version": "v1",
-    "name_for_human": "Nuvolaris Plugin",
-    "name_for_model": "nuvolaris_plugin",
-    "description_for_human": "Find an organization repos on GitHub",
-    "description_for_model": "Retrieving repositories made by an organization on GitHub",
-    "auth": {
-      "type": "none"
-    },
-    "api": {
-      "type": "openapi",
-      "url": "https://chatgpt.nuvolaris.app/openapi.yaml",
-      "has_user_authentication": false
-    },
-    "logo_url": "https://assets-global.website-files.com/64b64691257b91236b0e7482/64bfcab6bd343008e30e5d06_Nuvolaris%20logo%20white.png",
-    "contact_email": "info@nuvolaris.io",
-    "legal_info_url": "https://chatgpt.nuvolaris.app/legal.html"
-  }
+  "schema_version": "v1",
+  "name_for_human": "Nuvolaris Plugin",
+  "name_for_model": "nuvolaris_plugin",
+  "description_for_human": "Find an organization repos on GitHub",
+  "description_for_model": "Retrieving repositories made by an organization on GitHub",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://michele.nuvolaris.app/openapi.yaml",
+    "has_user_authentication": false
+  },
+  "logo_url": "https://michele.nuvolaris.app/logo.png",
+  "contact_email": "info@nuvolaris.io",
+  "legal_info_url": "https://chatgpt.nuvolaris.app/legal.html"
+}

@@ -4,7 +4,7 @@ info:
   description: A plugin that retrieves a list of projects from GitHub for an organization.
   version: 'v1'
 servers:
-  - url: https://chatgpt.nuvolaris.app/api/my
+  - url: https://michele.nuvolaris.app/api/my
 paths:
   /github-api/list-project:
     post:
