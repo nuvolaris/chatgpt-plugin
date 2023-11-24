@@ -1,7 +1,6 @@
 nuv action list
 task deploy
 
-
 nuv url github-api/list-project
 
 curl -sL https://nuvolaris.app/api/v1/web/michele/github-api/list-project
@@ -19,5 +18,7 @@ task be
 
 
 
+list database related projects for the apache foundation  in github
 
 
+list apache openwhisk projects in github
