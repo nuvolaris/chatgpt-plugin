@@ -1,6 +1,5 @@
 # A ChatGPT Plugin in Nuvolaris
 
-
 The goal of this repo is to build a chatgpt-plugin implemented in Nuvolaris
 
 At the moment we are experimenting with new ideas.
